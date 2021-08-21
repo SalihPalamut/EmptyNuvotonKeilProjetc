@@ -10,17 +10,17 @@
       <TargetName>Template</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>NUC240VE3AE</Device>
+          <Device>NUC240LD2AE</Device>
           <Vendor>Nuvoton</Vendor>
-          <Cpu>IRAM(0x20000000-0x20003FFF) IROM(0-0x1FFFF) CLOCK(50000000) CPUTYPE("Cortex-M0")</Cpu>
+          <Cpu>IRAM(0x20000000-0x20001FFF) IROM(0-0xFFFF) CLOCK(72000000) CPUTYPE("Cortex-M0")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>undefined</StartupFile>
           <FlashDriverDll></FlashDriverDll>
-          <DeviceId>0</DeviceId>
+          <DeviceId>8375</DeviceId>
           <RegisterFile></RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
@@ -46,14 +46,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\obj\</OutputDirectory>
+          <OutputDirectory>.\objects\</OutputDirectory>
           <OutputName>template</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\lst\</ListingPath>
+          <ListingPath>.\lists\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -80,8 +80,8 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>1</RunUserProg2>
-            <UserProg1Name>fromelf --bin ".\obj\@L.axf" --output ".\obj\@L.bin"</UserProg1Name>
-            <UserProg2Name>fromelf --text -c ".\obj\@L.axf" --output ".\obj\@L.txt"</UserProg2Name>
+            <UserProg1Name>fromelf --bin ".\objects\@L.axf" --output ".\objects\@L.bin"</UserProg1Name>
+            <UserProg2Name>fromelf --text -c ".\objects\@L.axf" --output ".\objects\@L.txt"</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -233,7 +233,7 @@
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
-            <RwSelD>5</RwSelD>
+            <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
@@ -244,12 +244,12 @@
             <Ro1Chk>0</Ro1Chk>
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
-            <Ir1Chk>0</Ir1Chk>
+            <Ir1Chk>1</Ir1Chk>
             <Ir2Chk>0</Ir2Chk>
             <Ra1Chk>0</Ra1Chk>
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
-            <Im1Chk>0</Im1Chk>
+            <Im1Chk>1</Im1Chk>
             <Im2Chk>0</Im2Chk>
             <OnChipMemories>
               <Ocm1>
@@ -285,12 +285,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x2000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x10000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -315,7 +315,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x10000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -340,7 +340,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x2000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -378,7 +378,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\Library\CMSIS\Include;..\..\..\Library\Device\Nuvoton\NUC230_240\Include;..\..\..\Library\StdDriver\inc</IncludePath>
+              <IncludePath>..\NUC230_240BSP\Library\CMSIS\Include;..\NUC230_240BSP\Library\Device\Nuvoton\NUC230_240\Include;..\NUC230_240BSP\Library\StdDriver\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -425,12 +425,12 @@
             <File>
               <FileName>startup_NUC230_240.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\Library\Device\Nuvoton\NUC230_240\Source\ARM\startup_NUC230_240.s</FilePath>
+              <FilePath>..\NUC230_240BSP\Library\Device\Nuvoton\NUC230_240\Source\ARM\startup_NUC230_240.s</FilePath>
             </File>
             <File>
               <FileName>system_NUC230_240.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\Library\Device\Nuvoton\NUC230_240\Source\system_NUC230_240.c</FilePath>
+              <FilePath>..\NUC230_240BSP\Library\Device\Nuvoton\NUC230_240\Source\system_NUC230_240.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -440,7 +440,7 @@
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\main.c</FilePath>
+              <FilePath>main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -450,22 +450,22 @@
             <File>
               <FileName>retarget.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\Library\StdDriver\src\retarget.c</FilePath>
+              <FilePath>..\NUC230_240BSP\Library\StdDriver\src\retarget.c</FilePath>
             </File>
             <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\Library\StdDriver\src\uart.c</FilePath>
+              <FilePath>..\NUC230_240BSP\Library\StdDriver\src\uart.c</FilePath>
             </File>
             <File>
               <FileName>sys.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\Library\StdDriver\src\sys.c</FilePath>
+              <FilePath>..\NUC230_240BSP\Library\StdDriver\src\sys.c</FilePath>
             </File>
             <File>
               <FileName>clk.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\Library\StdDriver\src\clk.c</FilePath>
+              <FilePath>..\NUC230_240BSP\Library\StdDriver\src\clk.c</FilePath>
             </File>
           </Files>
         </Group>

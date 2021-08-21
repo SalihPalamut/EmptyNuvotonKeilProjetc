@@ -11,7 +11,11 @@
 #include <stdio.h>
 #include "NUC230_240.h"
 
-
+/*Change Debug Uart Default UART0*/
+/*
+#undef DEBUG_PORT
+#define DEBUG_PORT UART1
+*/
 void SYS_Init(void)
 {
     /* Enable IP clock */

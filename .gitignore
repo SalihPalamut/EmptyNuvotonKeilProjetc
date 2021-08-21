@@ -1,3 +1,5 @@
+objects/
+lists/
 *.uvgui*
 # Prerequisites
 *.d
